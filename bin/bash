@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ -n "$(docker ps | grep tailwagsdog_web)" ]; then
+  docker exec -it tailwagsdog_web /bin/bash
+else
+  docker-compose -p tailwagsdog_web run --rm --service-ports web-dev bash
+fi
