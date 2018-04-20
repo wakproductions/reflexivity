@@ -3,5 +3,5 @@
 if [ -n "$(docker ps | grep tailwagsdog_web)" ]; then
   docker exec -it tailwagsdog_web /bin/bash
 else
-  docker-compose -p tailwagsdog_web run --rm --service-ports web-dev bash
+  docker-compose run web bin/bash
 fi

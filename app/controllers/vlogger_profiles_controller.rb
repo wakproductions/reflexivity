@@ -1,5 +1,5 @@
 class VloggerProfilesController < ApplicationController
-  before_action :set_vlogger_profile, only: [:show, :edit, :update, :destroy]
+  # before_action :set_vlogger_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /vlogger_profiles
   def index
@@ -8,6 +8,13 @@ class VloggerProfilesController < ApplicationController
 
   # GET /vlogger_profiles/1
   def show
+    @vlogger_profile = VloggerProfile.find_by(friendly_username: params[:vlogger_profile_friendly_username])
+    raise ActionController::RoutingError.new('Not Found') if @vlogger_profile.nil?
+  end
+
+  def videos_index
+    @vlogger_profile = VloggerProfile.where(friendly_username: params[:vlogger_profile_friendly_username]).includes(:videos).first
+    raise ActionController::RoutingError.new('Not Found') if @vlogger_profile.nil?
   end
 
   # GET /vlogger_profiles/new

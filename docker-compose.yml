@@ -20,6 +20,7 @@ services:
     tty: true
     volumes:
       - ./:/app
+      - ./data/share_content:/share_content
 
   # See the setup instructions https://hub.docker.com/_/postgres/
   # Database initialized with the command:
@@ -29,6 +30,7 @@ services:
     container_name: tailwagsdog_database
     image: "postgres:9.6.5-alpine"
     environment:
+      HOSTNAME: ${HOSTNAME}
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
@@ -40,6 +42,24 @@ services:
     volumes:
       - "./data/postgres_data_965:${DB_DATA_DIR}"
       - "./data/postgres_backups:/postgres_backups"
+
+  # console is at http://localhost:5001/webui
+  ipfs:
+    container_name: tailwagsdog_ipfs
+    command: "daemon --migrate=true --enable-namesys-pubsub"
+    environment:
+      IPFS_FD_MAX: 32768
+    image: "jbenet/go-ipfs:master"
+    networks:
+      - tailwagsdog
+    ports:
+      - "8080:8080"
+      - "4001:4001"
+      - "127.0.0.1:5001:5001"
+    volumes:
+      - "./data/docker-ipfs-data:/data/ipfs"
+      - "./data/share_content:/share_content"
+      - "./tmp/ipfs-docker-staging:/export"
 
 
 networks:

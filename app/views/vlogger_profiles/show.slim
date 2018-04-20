@@ -1,0 +1,16 @@
+h1
+  =@vlogger_profile.vlog_name
+  /span.badge.badge-secondary#follow-link Follow
+
+= render(partial: 'nav')
+
+.container#vlogger-about
+  .row
+    .col-lg-4
+      = image_tag(asset_path("profile_pictures/#{@vlogger_profile.friendly_username}.jpg"), class: 'profile-image')
+      - if @vlogger_profile.twitter_profile_url
+        div= link_to("Twitter", @vlogger_profile.twitter_profile_url, target: '_blank')
+      - if @vlogger_profile.website_url
+        div= link_to("Website", @vlogger_profile.website_url, target: '_blank')
+    .col-lg-8
+      = @vlogger_profile.about_text

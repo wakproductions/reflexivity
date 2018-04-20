@@ -1,0 +1,10 @@
+.container#vlogger-videos
+  .row
+    .col-lg-4
+      = image_tag(asset_path("profile_pictures/#{@vlogger_profile.friendly_username}.jpg"), class: 'profile-image')
+      - if @vlogger_profile.twitter_profile_url
+        div= link_to("Twitter", @vlogger_profile.twitter_profile_url, target: '_blank')
+      - if @vlogger_profile.website_url
+        div= link_to("Website", @vlogger_profile.website_url, target: '_blank')
+    .col-lg-8
+      = @vlogger_profile.about_text

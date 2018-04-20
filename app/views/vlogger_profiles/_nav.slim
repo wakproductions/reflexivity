@@ -1,0 +1,4 @@
+ul.nav
+  li.nav-item= link_to("About", vlogger_profile_path(vlogger_profile_friendly_username: @vlogger_profile.friendly_username), class: 'nav-link')
+  li.nav-item= link_to("Videos", vlogger_profile_videos_path(vlogger_profile_friendly_username: @vlogger_profile.friendly_username), class: 'nav-link')
+

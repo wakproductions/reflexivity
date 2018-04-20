@@ -1,0 +1,8 @@
+h2 Video Archive
+
+#video-archive
+  .container
+    .row
+      - @videos.each do |video|
+        = link_to(video_path(video)) do
+          = render(partial: 'video_card', locals: { video_post: video })

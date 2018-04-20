@@ -1,5 +1,7 @@
 {
   "name": "tailwagsdog",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "steem": "^0.7.1"
+  }
 }

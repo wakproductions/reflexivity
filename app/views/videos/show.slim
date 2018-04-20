@@ -1,0 +1,12 @@
+#video-show
+  .row
+    .col-md-9
+      .video-watch
+        .embed-responsive.embed-responsive-16by9
+          video( poster=ipfs_hash_link(@video_post.video_metadata.video_poster_480x360_ipfs_hash) controls )
+           source( src=ipfs_hash_link(@video_post.video_metadata.video_480p_ipfs_hash) type="video/mp4")
+
+        h3.title= @video_post.title
+    .other-videos
+
+      
