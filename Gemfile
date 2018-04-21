@@ -1,4 +1,4 @@
-ruby '2.5.0'
+ruby '2.5.1'
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -21,10 +21,14 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 # Functional backend gems
+gem 'actionizer'
 gem 'devise'
 gem 'kaminari'
 gem 'ipfs'
 gem 'radiator'
+gem 'streamio-ffmpeg'
+gem 'tzinfo-data'
+gem 'verbalize'
 
 group :development, :test do
   gem 'dotenv-rails' # allows use of .env file for local development

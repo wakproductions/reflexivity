@@ -1,0 +1,2 @@
+IPFS_FILES_PATH='/share_content/uploaded_content'
+UPLOADED_FILES_PATH='/share_content/uploaded_content/unprocessed_files'

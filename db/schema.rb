@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418023308) do
+ActiveRecord::Schema.define(version: 20180420042846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180418023308) do
     t.string "thumbnail_url"
     t.string "title"
     t.text "post_content"
-    t.date "upload_date"
+    t.date "publish_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "type"
@@ -61,9 +61,11 @@ ActiveRecord::Schema.define(version: 20180418023308) do
     t.string "video_480p_ipfs_hash"
     t.string "video_720p_ipfs_hash"
     t.string "video_duration"
-    t.string "video_filesize"
+    t.string "video_filesize_480p"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "video_filesize_720p"
+    t.string "video_unprocessed_file_name"
   end
 
   create_table "vlogger_profiles", force: :cascade do |t|

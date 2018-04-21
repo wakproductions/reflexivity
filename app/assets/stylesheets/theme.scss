@@ -1,5 +1,9 @@
 @import 'colors';
 
+a:hover {
+  text-decoration: none;
+}
+
 .navbar {
   background-color: $color-neutral;
   color: $color-light-text;
