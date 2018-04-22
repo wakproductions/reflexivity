@@ -1,0 +1,10 @@
+.git
+.idea
+data
+gitignore
+Dockerfile
+.DS_Store
+.gitignore
+.env
+.env.*
+tmp*

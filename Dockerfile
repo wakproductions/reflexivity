@@ -2,6 +2,7 @@ FROM ruby:2.5.1-alpine
 RUN apk update && apk add \
   build-base \
   postgresql-dev \
+  less \
   libcurl \
   netcat-openbsd \
   nodejs \
@@ -9,8 +10,8 @@ RUN apk update && apk add \
   ffmpeg \
   imagemagick
 
-CMD mkdir /app
 WORKDIR /app
+#ADD . /app
 COPY Gemfile /app
 COPY Gemfile.lock /app
 

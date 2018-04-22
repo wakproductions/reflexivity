@@ -16,6 +16,9 @@ module BuildConvertedVideoFilenameBase
 
       # Strip out the non-ascii character
       name.gsub!(/[^0-9A-Za-z.\-]/, '_')
+
     end
+      .gsub!(' ', '_')
+      .gsub(/[^0-9A-Za-z\-_]/, '')
   end
 end

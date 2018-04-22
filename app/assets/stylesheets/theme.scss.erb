@@ -1,0 +1,71 @@
+@import 'colors';
+
+a:hover {
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: $color-neutral;
+  color: $color-light-text;
+  margin-bottom: 15px;
+
+  a {
+    color: $color-light-text;
+  }
+}
+
+span#follow-link {
+  margin-left: 10px;
+}
+
+#vlogger-about {
+  .profile-image {
+    border-radius: 6px;
+    //width: 320px;
+    width: 100%;
+  }
+}
+
+#landing-page {
+  a {
+    text-shadow: none;
+  }
+  .jumbotron {
+    background-image: url("<%= IPFSHelper.ipfs_hash_link('QmYUYZBXkhHbGRwttNX7PxN8zdcuaGoH83jfDwS2QLzrmq') %>");
+    background-size: cover;
+    color: $color-light-text;
+    min-height: 600px;
+    padding: 40px;
+    text-align: right;
+    text-shadow: 2px 2px #000000;
+  }
+}
+
+#video-archive {
+  .video-card {
+    margin: 10px;
+    font-size: 11pt;
+    .title {
+      font-weight: bold;
+    }
+    .stats {
+      margin-top: 3px;
+    }
+  }
+}
+
+#video-show {
+  .share-buttons {
+    text-align: right;
+  }
+  .video-reaction-buttons {
+    margin-top: 10px;
+  }
+  .video-description {
+    margin-top: 10px;
+    h6 {
+      font-size: 12pt;
+      font-weight: bold;
+    }
+  }
+}

@@ -8,7 +8,7 @@ class VideosController < ApplicationController
   # GET /video/1
   def show
     # TODO filter to exclude hidden posts
-    @video_post = Post.find(params[:id])
+    @presenter = Videos::ShowPresenter.new(Post.find(params[:id]).increment_view_count)
   end
 
   private

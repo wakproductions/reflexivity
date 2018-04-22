@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # wait-for-postgres.sh
 # From the Docker product manual: https://docs.docker.com/compose/startup-order/
 

@@ -1,5 +1,4 @@
-.col-sm-3
-  .card.video-card
-    =image_tag(ipfs_hash_link(video_post.video_metadata.video_poster_480x360_ipfs_hash), class: 'card-img-top')
-    .title= video_post.title
-    .stats= video_post.upload_date
+.card.video-card
+  =image_tag(ipfs_hash_link(video_post.video_metadata.video_poster_480x360_ipfs_hash), class: 'card-img-top')
+  .title= video_post.title
+  .stats= video_post.publish_date

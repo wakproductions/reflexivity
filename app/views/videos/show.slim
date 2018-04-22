@@ -1,12 +1,25 @@
 #video-show
   .row
     .col-md-9
+      h3.title= @presenter.title
       .video-watch
         .embed-responsive.embed-responsive-16by9
-          video( poster=ipfs_hash_link(@video_post.video_metadata.video_poster_480x360_ipfs_hash) controls )
-           source( src=ipfs_hash_link(@video_post.video_metadata.video_480p_ipfs_hash) type="video/mp4")
+          video( poster=@presenter.video_poster_link controls autoplay )
+           source( src=@presenter.video480p_link type="video/mp4")
 
-        h3.title= @video_post.title
-    .other-videos
+      .video-reaction-buttons
+        .row
+          .col.view-count= pluralize(@presenter.view_count, 'view')
+          .col.share-buttons
+            /Share
 
-      
+      .video-description
+        h6 Details
+        p= @presenter.post_date
+        .post-content= @presenter.post_content
+
+
+    .col-md-3
+      /h3 Other Video Selections
+
+

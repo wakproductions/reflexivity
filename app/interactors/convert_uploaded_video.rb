@@ -6,6 +6,14 @@ class ConvertUploadedVideo
   def call
     build_video480p
     build_video720p
+
+    {
+      video480p_path: video480p_path,
+      video720p_path: video720p_path,
+      video_duration: video_duration,
+      video_filesize_480p: video_filesize_480p,
+      video_filesize_720p: video_filesize_720p,
+    }
   end
 
   private
@@ -31,6 +39,18 @@ class ConvertUploadedVideo
 
   def movie
     @movie ||= FFMPEG::Movie.new(File.join(UPLOADED_FILES_PATH, filename))
+  end
+
+  def video_duration
+    movie.duration
+  end
+
+  def video_filesize_480p
+    File.size(video480p_path)
+  end
+
+  def video_filesize_720p
+    File.size(video720p_path)
   end
 
 end
