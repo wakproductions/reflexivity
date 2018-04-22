@@ -1,5 +1,13 @@
 @import 'colors';
 
+.background-color-neutral-medium { background-color: $color-neutral-medium }
+
+.social-media-icon {
+  height: 20px;
+  margin: 0.25rem;
+  width: 20px;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -34,10 +42,16 @@ span#follow-link {
     background-image: url("<%= IPFSHelper.ipfs_hash_link('QmYUYZBXkhHbGRwttNX7PxN8zdcuaGoH83jfDwS2QLzrmq') %>");
     background-size: cover;
     color: $color-light-text;
-    min-height: 600px;
+    min-height: 670px;
     padding: 40px;
     text-align: right;
     text-shadow: 2px 2px #000000;
+  }
+
+  #footer {
+    font-size: 8pt;
+    margin-top: 2rem;
+    padding: 3rem;
   }
 }
 
