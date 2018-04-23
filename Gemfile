@@ -31,7 +31,7 @@ gem 'tzinfo-data'
 gem 'verbalize'
 
 group :development, :test do
-  gem 'dotenv-rails' # allows use of .env file for local development
+  # gem 'dotenv-rails' # allows use of .env file for local development
   gem 'rspec-rails'
 
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
