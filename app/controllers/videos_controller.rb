@@ -5,10 +5,10 @@ class VideosController < ApplicationController
     @videos = Post.videos
   end
 
-  # GET /video/1
+  # GET /video/:permalink_id
   def show
     # TODO filter to exclude hidden posts
-    @presenter = Videos::ShowPresenter.new(Post.find(params[:id]).increment_view_count)
+    @presenter = Videos::ShowPresenter.new(Post.find_by(permalink_id: params[:permalink_id]).increment_view_count)
   end
 
   private

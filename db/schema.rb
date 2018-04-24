@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180421040049) do
+ActiveRecord::Schema.define(version: 20180424034541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20180421040049) do
     t.datetime "updated_at", null: false
     t.string "type"
     t.integer "video_metadata_id"
-    t.string "permalink_id"
+    t.string "permalink_id", null: false
     t.bigint "view_count", default: 0
     t.index ["permalink_id"], name: "index_posts_permalink_id_unique", unique: true
   end

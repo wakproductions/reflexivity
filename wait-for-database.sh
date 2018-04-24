@@ -14,6 +14,11 @@ cmd="$@"
 echo "!!!!!!!! --- !!!!!!!!"
 echo "$pg_connect_cmd"
 
+# Uncomment to stall this to run web server by docker exec
+#while true; do
+#sleep 2
+#done
+
 until $(exec $pg_connect_cmd); do
   >&2 echo "Postgres is unavailable - sleeping"
   sleep 5

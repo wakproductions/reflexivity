@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # get 'vlog/:vlogger_profile_friendly_username/videos', to: 'vlogger_profiles#videos_index', as: :vlogger_profile_videos
   # get 'vlog/:vlogger_profile_friendly_username', to: 'vlogger_profiles#show', as: :vlogger_profile
 
-  resources :videos, only: [:index, :show]
+  resources :videos, only: [:index]
+  get '/videos/:permalink_id', to: 'videos#show', as: 'video'
 
   root 'home#index'
 end
