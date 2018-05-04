@@ -24,3 +24,8 @@
 .byebug_history
 .env
 .env.*
+
+#
+# Instance-specific files for Reflexivity site
+#
+/app/instance/*
