@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-if [ -n "$(docker ps | grep tailwagsdog_web)" ]; then
-  docker exec -it tailwagsdog_web /bin/bash
+if [ -n "$(docker ps | grep reflexivity_web)" ]; then
+  docker exec -it reflexivity_web /bin/bash
 else
   docker-compose run web bin/bash
 fi

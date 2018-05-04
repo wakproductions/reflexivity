@@ -1,5 +1,5 @@
 {
-  "name": "tailwagsdog",
+  "name": "reflexivity",
   "private": true,
   "dependencies": {
     "steem": "^0.7.1"
