@@ -15,4 +15,9 @@
  */
 
 @import 'bootstrap';
-@import '../../instance/stylesheets/main';
+
+<% require './lib/load_customizations_helper' %>
+<% LoadCustomizationsHelper.engine_names.each do |engine| %>
+  <%= %{@import '#{engine}/application';} %>
+<% end %>
+

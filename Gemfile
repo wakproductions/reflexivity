@@ -1,3 +1,5 @@
+require './lib/load_customizations_helper'
+
 ruby '2.5.1'
 source 'https://rubygems.org'
 
@@ -29,11 +31,13 @@ gem 'streamio-ffmpeg'
 gem 'tzinfo-data'
 gem 'verbalize'
 
+# Reflexivity addons
+gem 'reflexivity-videos', path: 'engines-package/reflexivity-videos'
+
 # Load Reflexivity site-specific customization engines
-Dir.entries(File.join(Dir.pwd, 'engines-customization')).reject {|name| name =~ %r{\.{1,2}}} .each do |engine|
+LoadCustomizationsHelper.engine_names.each do |engine|
   gem engine, path: "engines-customization/#{engine}"
 end
-
 
 group :development, :test do
   # gem 'dotenv-rails' # allows use of .env file for local development
