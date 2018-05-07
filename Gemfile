@@ -21,7 +21,6 @@ gem 'slim'
 gem 'uglifier', '>= 1.3.0'
 
 # Functional backend gems
-gem 'actionizer'
 gem 'devise'
 gem 'kaminari'
 gem 'ipfs'
@@ -29,6 +28,12 @@ gem 'radiator'
 gem 'streamio-ffmpeg'
 gem 'tzinfo-data'
 gem 'verbalize'
+
+# Load Reflexivity site-specific customization engines
+Dir.entries(File.join(Dir.pwd, 'engines-customization')).reject {|name| name =~ %r{\.{1,2}}} .each do |engine|
+  gem engine, path: "engines-customization/#{engine}"
+end
+
 
 group :development, :test do
   # gem 'dotenv-rails' # allows use of .env file for local development
@@ -43,4 +48,4 @@ end
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-end
+endgem 'reflexivity-videos', path: 'reflexivity-videos'

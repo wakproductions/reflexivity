@@ -11,9 +11,9 @@ RUN apk update && apk add \
   imagemagick
 
 WORKDIR /app
-#ADD . /app
 COPY Gemfile /app
 COPY Gemfile.lock /app
+COPY . /app
 
 RUN gem install bundler -v 1.16.1
 RUN bundle install
