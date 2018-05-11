@@ -1,8 +1,0 @@
-h2 Video Archive
-
-#video-archive
-  .row
-    - @videos.each do |video|
-      .col-lg-3
-        = render(partial: 'video_card', locals: { video_post: video })
-

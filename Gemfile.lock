@@ -5,9 +5,9 @@ PATH
       rails (~> 5.1.6)
 
 PATH
-  remote: engines-package/reflexivity-videos
+  remote: engines/reflexivity_posts
   specs:
-    reflexivity-videos (0.1.0)
+    reflexivity_posts (0.1.0)
       rails (~> 5.1.6)
 
 GEM
@@ -279,7 +279,7 @@ DEPENDENCIES
   puma (~> 3.7)
   radiator
   rails (~> 5.1.4)
-  reflexivity-videos!
+  reflexivity_posts!
   rspec-rails
   sass-rails (~> 5.0)
   slim

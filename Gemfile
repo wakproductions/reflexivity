@@ -32,7 +32,7 @@ gem 'tzinfo-data'
 gem 'verbalize'
 
 # Reflexivity addons
-gem 'reflexivity-videos', path: 'engines-package/reflexivity-videos'
+gem 'reflexivity_posts', path: 'engines/reflexivity_posts'
 
 # Load Reflexivity site-specific customization engines
 LoadCustomizationsHelper.engine_names.each do |engine|
