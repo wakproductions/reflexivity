@@ -2,6 +2,8 @@
 # wait-for-postgres.sh
 # From the Docker product manual: https://docs.docker.com/compose/startup-order/
 
+bundle install
+
 set -e
 
 host="$1"

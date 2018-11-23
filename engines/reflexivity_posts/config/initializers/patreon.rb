@@ -1,0 +1,1 @@
+PATREON_REDIRECT_URI="http://#{ENV.fetch('HOSTNAME')}:31791/auth/patreon/callback"

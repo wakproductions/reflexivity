@@ -9,6 +9,4 @@ Rails.application.routes.draw do
   end
 
   mount ReflexivityPosts::Engine => '/'
-
-  # root 'home#index'
 end
